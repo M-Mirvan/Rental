@@ -19,7 +19,7 @@
  *  Deze comment mág je verwijderen nadat je het hebt gelezen.
  */
 
-
+            
 $requestUri = $_SERVER['REQUEST_URI'];
 $path = trim(parse_url($requestUri, PHP_URL_PATH), '/');
 
