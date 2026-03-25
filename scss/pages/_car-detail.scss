@@ -1,23 +1,29 @@
-.car-detail{
+.car-detail .grid {
+  gap: 50px;
+}
 
-  .grid{
-    gap: 50px;
-    .car-type .row{
-      display: flex;
-      justify-content: space-between;
-    }
-  }
+.car-detail .grid .car-type .row {
+  display: flex;
+  justify-content: space-between;
+}
 
-  .call-to-action{
-    display: flex;
-    padding-top: 5em;
-    .row{
-      justify-content: left !important;
-      align-items: center;
-    }
-  }
-  .call-to-action .row:last-of-type{
-    display: flex;
-    justify-content: flex-end !important;
-  }
+/* Call to action container */
+.car-detail .call-to-action {
+  display: flex;
+  padding-top: 5em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Links binnen call-to-action */
+.car-detail .call-to-action .row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Knop rechts zetten */
+.car-detail .call-to-action .row:last-of-type {
+  display: flex;
+  justify-content: flex-end;
 }
