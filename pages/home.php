@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<main>
 
 <h2 class="section-title">Populaire auto's</h2>
 <div class="cars">
