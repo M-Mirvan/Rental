@@ -39,7 +39,7 @@ require "includes/header.php";
         <div class="advertorial">
             <h2>Hét platform om een auto te huren</h2>
             <p>Snel en eenvoudig een auto huren. Natuurlijk voor een lage prijs.</p>
-            <a href="#" class="button-primary">Huur nu een auto</a>
+            <a id="randomCarBtn" href="#" class="button-primary">Huur nu een auto</a>
             <img src="assets/images/car-rent-header-image-1.png" alt="">
         </div>
 
@@ -51,6 +51,17 @@ require "includes/header.php";
         </div>
     </div>
 </header>
+
+<main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ids = [1, 2, 3, 4, 5, 6]; // bestaande auto IDs
+    const randomId = ids[Math.floor(Math.random() * ids.length)];
+    
+    document.getElementById("randomCarBtn").href = "pages/car-detail.php?id=" + randomId;
+});
+</script>
 
 <main>
 
