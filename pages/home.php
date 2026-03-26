@@ -56,7 +56,7 @@ require "includes/header.php";
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const ids = [1, 2, 3, 4, 5, 6]; // bestaande auto IDs
+    const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // bestaande auto IDs
     const randomId = ids[Math.floor(Math.random() * ids.length)];
     
     document.getElementById("randomCarBtn").href = "pages/car-detail.php?id=" + randomId;
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 
 <div class="show-more">
-    <a class="button-primary" href="#">Toon alle</a>
+    <a class="button-primary" href="ons-aanbod">Toon alle</a>
 </div>
 
 </main>
