@@ -21,6 +21,25 @@ if (!$car) {
     require $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php";
     exit;
 }
+
+// 1. Fetch the reviewer count from your database column 'reviewers'
+    // We use ?? 0 to provide a fallback if the column is empty
+    $raw_count = $car['reviewers'] ?? 0;
+
+    // 2. Calculate stars (Divide by 100, floor to get whole number)
+    $star_rating = floor($raw_count / 100);
+
+    // 3. Set constraints
+    if ($star_rating > 5) { 
+        $star_rating = 5; // Max 5 stars
+    } 
+    if ($star_rating < 1 && $raw_count > 0) { 
+        $star_rating = 1; // If they have 1-99 reviews, show at least 1 star
+    }
+    if ($raw_count <= 0) {
+        $star_rating = 0; // Truly 0 reviews = 0 stars
+    }
+
 ?>
 
 <main class="car-detail">
@@ -39,10 +58,11 @@ if (!$car) {
 
             <h2><?= htmlspecialchars($car['name']) ?></h2>
 
-            <div class="rating">
-                <span class="stars stars-4"></span>
-                <span>440+ reviewers</span>
-            </div>
+        <div class="rating">
+            <span class="stars stars-<?= (int)$star_rating ?>"></span>
+    
+            <span><?= number_format((float)$raw_count) ?>+ reviewers</span>
+        </div>
 
             <p>
                 <?= htmlspecialchars($car['name']) ?> is een krachtige 

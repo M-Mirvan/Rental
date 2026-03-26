@@ -1,0 +1,73 @@
+// assets/sass/components/_search.scss
+
+.search-form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 492px;
+    margin: 0 32px;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .search-input {
+        width: 100%;
+        height: 44px !important;
+        padding: 0 48px 0 48px !important; // Left space for glass, right for filter
+        
+        background-color: #FFFFFF;
+        border: 1px solid rgba(195, 212, 233, 0.4);
+        border-radius: 70px !important; // The pill shape
+        
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14px;
+        color: #596780;
+        outline: none;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+            color: #90A3BF;
+        }
+
+        &:focus {
+            border-color: #3563E9;
+        }
+    }
+
+    // The Magnifying Glass Button (Left)
+    .search-icon {
+        position: absolute;
+        left: 16px;
+        background: none;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 5;
+
+        img {
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+    }
+
+    // The Filter Icon (Right)
+    .filter-icon {
+        position: absolute;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        z-index: 5;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
