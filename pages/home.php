@@ -35,6 +35,7 @@ require "includes/header.php";
 ?>
 
 <header>
+    
     <div class="advertorials">
         <div class="advertorial">
             <h2>Hét platform om een auto te huren</h2>
