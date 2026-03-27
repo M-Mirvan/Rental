@@ -1,0 +1,43 @@
+/* Container */
+.search-form { display: flex; justify-content: center; margin: 0; width: 100%; max-width: 600px; }
+.search-box { position: relative; width: 100%; }
+.search-input { width: 100%; height: 44px; padding: 0 56px; border: 1px solid rgba(195,212,233,0.4); border-radius: 70px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: #596780; outline: none; box-sizing: border-box; }
+.search-input::placeholder { color: #90A3BF; }
+.search-input:focus { border-color: #3563E9; }
+
+/* Left and right icons */
+.search-icon, .filter-icon {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; background: none; border: none;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 20;
+}
+.search-icon { left: 8px; pointer-events: none; } /* decorative */
+.filter-icon { right: 130px; } /* clickable */
+.search-icon img, .filter-icon img { width: 20px; height: 20px; display: block; }
+
+/* Modal overlay */
+.filter-modal {
+  display: none;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5); z-index: 999;
+  justify-content: center; align-items: center;
+}
+.filter-modal.show { display: flex; }
+
+/* Modal content */
+.filter-modal-content {
+  background: #fff; padding: 24px; border-radius: 12px; width: 300px; max-width: 90%;
+  position: relative;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute; top: 12px; right: 12px; font-size: 24px; cursor: pointer;
+}
+
+/* Labels */
+.filter-modal-content label { display: block; margin-bottom: 6px; font-size: 14px; color: #596780; }
+
+/* Apply button */
+.filter-modal-content .button-primary { margin-top: 12px; width: 100%; padding: 8px 0; font-size: 14px; background-color: #3563E9; color: #fff; border: none; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+.filter-modal-content .button-primary:hover { background-color: #254bb5; }

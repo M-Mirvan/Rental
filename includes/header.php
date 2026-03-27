@@ -5,13 +5,14 @@ session_start();
 <!doctype html>
 <html lang="nl">
 <head>
+    <script src="/assets/javascipt.main.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rydr</title>
-
+    <link rel="stylesheet" href="/assets/css/search.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="icon" type="image/png" href="/assets/images/favicon.ico">
-
+    <link rel="stylesheet" href="/assets/css/search.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
@@ -27,27 +28,49 @@ session_start();
     </div>
 
     <!-- 🔍 SEARCH BAR -->
-<form method="GET" action="/pages/cars.php" class="search-form">
-    <div class="search-box">
-      
-            <img src="/assets/images/icons/search-normal.svg" alt="">
-        </button>
-        
-        <input type="search" name="q" class="search-input" placeholder="Search something here">
-        
-        <a href="#" class="filter-icon">
-            <img src="/assets/images/icons/filter.svg" alt="">
-        </a>
+<form class="search-form" method="GET" action="/pages/cars.php">
+  <div class="search-box">
+    <!-- Left search icon (decorative only) -->
+    <div class="search-icon">
+      <img src="/assets/images/icons/search-normal.svg" alt="Search">
     </div>
+
+    <!-- Input -->
+    <input type="search" name="q" class="search-input" placeholder="Search something here">
+
+    <!-- Right filter icon (opens popup) -->
+    <button type="button" class="filter-icon" id="filterToggle">
+      <img src="/assets/images/icons/filter.svg" alt="Filter">
+    </button>
+  </div>
 </form>
 
-</form>
+<!-- Filter modal -->
+<div class="filter-modal" id="filterModal">
+  <div class="filter-modal-content">
+    <span class="modal-close" id="filterClose">&times;</span>
+    <h2>Filter your search</h2>
+
+    <form method="GET" action="/pages/cars.php">
+      <h4>Type</h4>
+      <label><input type="checkbox" name="type[]" value="SUV"> SUV</label>
+      <label><input type="checkbox" name="type[]" value="Sport"> Sport</label>
+      <label><input type="checkbox" name="type[]" value="Sedan"> Sedan</label>
+
+      <h4>Transmission</h4>
+      <label><input type="checkbox" name="transmission[]" value="Automatic"> Automatic</label>
+      <label><input type="checkbox" name="transmission[]" value="Manual"> Manual</label>
+
+      <button type="submit" class="button-primary">Apply Filters</button>
+    </form>
+  </div>
+</div>
 
     <!-- 📍 NAV -->
     <nav class="nav">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/pages/cars.php">Ons aanbod</a></li>
+            <li><a href="/ons-aanbod">Ons aanbod</a></li>
             <li><a href="#">Hulp nodig?</a></li>
         </ul>
     </nav>
@@ -84,5 +107,6 @@ session_start();
     </div>
 
 </div>
+</body>
 
 <div class="content">
