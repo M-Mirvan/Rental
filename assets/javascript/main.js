@@ -40,6 +40,7 @@ if (modal) {
 }
 
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function() {
     const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // bestaande auto IDs
     const randomId = ids[Math.floor(Math.random() * ids.length)];
@@ -47,3 +48,28 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("randomCarBtn").href = "pages/car-detail.php?id=" + randomId;
 });
 
+// /assets/js/search-filter.js
+document.addEventListener("DOMContentLoaded", function() {
+  const filterToggle = document.getElementById('filterToggle');
+  const filterModal = document.getElementById('filterModal');
+  const filterClose = document.getElementById('filterClose');
+
+  // Open modal
+  filterToggle.addEventListener('click', () => {
+    filterModal.classList.add('show');
+  });
+
+  // Close modal
+  filterClose.addEventListener('click', () => {
+    filterModal.classList.remove('show');
+  });
+
+  // Close by clicking outside content
+  filterModal.addEventListener('click', (e) => {
+    if (e.target === filterModal) {
+      filterModal.classList.remove('show');
+    }
+  });
+});
+=======
+>>>>>>> origin/main
