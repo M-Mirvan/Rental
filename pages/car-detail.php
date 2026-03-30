@@ -1,5 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 
 //  ID ophalen uit URL
 $id = $_GET['id'] ?? null;

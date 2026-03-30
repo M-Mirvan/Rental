@@ -1,18 +1,8 @@
 <?php
+require $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// Database connectie
-try {
-    $conn = new PDO(
-        "mysql:host=localhost;dbname=rental;charset=utf8mb4",
-        "root",
-        ""
-    );
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
-}
 
 function getCars($conn, $limit = 4)
 {
@@ -31,7 +21,6 @@ function getCars($conn, $limit = 4)
 $popularCars = getCars($conn, 4);
 $recommendedCars = getCars($conn, 8);
 
-require "includes/header.php";
 ?>
 
 <header>
