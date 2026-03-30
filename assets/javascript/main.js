@@ -40,6 +40,7 @@ if (modal) {
 }
 
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function() {
     const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // bestaande auto IDs
     const randomId = ids[Math.floor(Math.random() * ids.length)];
@@ -70,3 +71,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+=======
+>>>>>>> origin/main
