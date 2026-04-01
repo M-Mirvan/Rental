@@ -39,7 +39,7 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
     <nav class="nav">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/ons-aanbod">Ons aanbod</a></li>
+            <li><a href="/pages/cars.php?q=">Ons aanbod</a></li>
             <li><a href="#">Hulp nodig?</a></li>
         </ul>
     </nav>
