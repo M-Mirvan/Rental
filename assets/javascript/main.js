@@ -73,3 +73,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const loginModal = document.getElementById("loginModal");
+    const loginClose = document.getElementById("loginClose");
+
+    if (loginClose && loginModal) {
+        loginClose.addEventListener("click", function () {
+            loginModal.classList.add("hidden");
+        });
+    }
+});

@@ -54,7 +54,7 @@
             <a href="/login-form" class="button-secondary">Inloggen</a>
             <a href="/register-form" class="button-primary">Account aanmaken</a>
         </div>
-        <button class="modal-close">&times;</button>
+        <button class="modal-close" id="loginClose">&times;</button>
     </div>
 </div>
 <script src="assets/javascript/main.js"></script>
