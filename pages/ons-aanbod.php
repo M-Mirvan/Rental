@@ -46,7 +46,7 @@
                     <div class="car-type"><?= htmlspecialchars($car['type']) ?></div>
                 </div>
 
-                <img src="assets/images/products/car (1).svg" alt="car">
+                <img src="assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
 
                 <div class="car-specification">
                     <span>
@@ -87,7 +87,7 @@
                     <div class="car-type"><?= htmlspecialchars($car['type']) ?></div>
                 </div>
 
-                <img src="assets/images/products/car (1).svg" alt="car">
+                <img src="assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
 
                 <div class="car-specification">
                     <span>
