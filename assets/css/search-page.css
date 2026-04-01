@@ -1,53 +1,81 @@
-/* Advertorial Section */
-.advertorials {
-  padding: 1em 4em 0 4em;
-  display: flex;
-  gap: 1em;
-  position: relative;
-  overflow: hidden;
-}
+/* MODERNE CSS STRUCTUUR */
+    .app-container {
+        display: grid;
+        grid-template-columns: 280px 1fr; /* Sidebar vaste breedte, rest flexibel */
+        min-height: 100vh;
+        background-color: #F6F7F9;
+    }
 
-.advertorial {
-  flex: 1;
-  background-color: #54A6FF;
-  display: flex;
-  padding: 24px;
-  flex-direction: column;
-  border-radius: 10px;
-  position: relative; /* needed for absolutely positioned images */
+    /* SIDEBAR STYLING */
+    .app-sidebar {
+        background: #FFF;
+        padding: 32px;
+        border-right: 1px solid #E0E4EC;
+    }
 
-  h2 {
-    color: white;
-    max-width: 50%;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: -0.03em;
-    margin: 0;
-    z-index: 1; /* ensure text is above images */
-    position: relative;
-  }
+    .filter-group { margin-bottom: 35px; }
+    .filter-label { 
+        font-size: 12px; color: #90A3BF; 
+        font-weight: 700; text-transform: uppercase; 
+        margin-bottom: 20px; display: block;
+    }
 
-  p {
-    color: white;
-    max-width: 50%;
-    z-index: 1;
-    position: relative;
-  }
+    .custom-checkbox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        color: #596780;
+    }
 
-  /* Images inside the advertorial */
-  img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 150px; /* adjust size */
-  }
+    .custom-checkbox input { margin-right: 10px; accent-color: #3563E9; }
+    .count-tag { color: #90A3BF; font-weight: 400; }
 
-  /* Specific image classes for left and right */
-  .background-header-left {
-    left: 0;
-  }
+    /* GRID STYLING */
+    .car-main { padding: 32px; }
+    
+    .car-display-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+    }
 
-  .background-header-right {
-    right: 0;
-  }
-}
+    .car-item {
+        background: #FFF;
+        border-radius: 12px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .car-item:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+    .car-info h3 { margin: 0; font-size: 18px; color: #1A202C; }
+    .car-info span { color: #90A3BF; font-size: 13px; }
+
+    .car-img-wrapper { height: 140px; display: flex; align-items: center; margin: 25px 0; }
+    .car-img-wrapper img { width: 100%; object-fit: contain; }
+
+    .car-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .price-tag { font-size: 18px; font-weight: 700; color: #1A202C; }
+    .price-tag small { color: #90A3BF; font-size: 12px; font-weight: 400; }
+
+    .btn-action {
+        background: #3563E9;
+        color: #FFF;
+        padding: 10px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+    }

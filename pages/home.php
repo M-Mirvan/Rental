@@ -7,8 +7,7 @@ ini_set('display_errors', 1);
 function getCars($conn, $limit = 4)
 {
     $stmt = $conn->prepare("
-        SELECT * 
-        FROM cars 
+        SELECT * FROM cars 
         WHERE available > 0 
         ORDER BY car_id DESC 
         LIMIT :limit
@@ -44,8 +43,6 @@ $recommendedCars = getCars($conn, 8);
 
 <main>
 
-
-
 <h2 class="section-title">Populaire auto's</h2>
 <div class="cars">
 
@@ -59,7 +56,7 @@ $recommendedCars = getCars($conn, 8);
             </div>
         </div>
 
-        <img src="assets/images/products/car (1).svg" alt="car">
+        <img src="assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
 
         <div class="car-specification">
             <span>
@@ -85,7 +82,6 @@ $recommendedCars = getCars($conn, 8);
                 </strong> / dag
             </span>
 
-            <!-- FIX: geen / voor bestand -->
             <a href="pages/car-detail.php?id=<?= (int)$car['car_id'] ?>" class="button-primary">
                 Bekijk nu
             </a>
@@ -110,7 +106,7 @@ $recommendedCars = getCars($conn, 8);
             </div>
         </div>
 
-        <img src="assets/images/products/car (1).svg" alt="car">
+        <img src="assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
 
         <div class="car-specification">
             <span>

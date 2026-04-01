@@ -24,22 +24,22 @@ if (!$car) {
 }
 
 // 1. Fetch the reviewer count from your database column 'reviewers'
-    // We use ?? 0 to provide a fallback if the column is empty
-    $raw_count = $car['reviewers'] ?? 0;
+// We use ?? 0 to provide a fallback if the column is empty
+$raw_count = $car['reviewers'] ?? 0;
 
-    // 2. Calculate stars (Divide by 100, floor to get whole number)
-    $star_rating = floor($raw_count / 100);
+// 2. Calculate stars (Divide by 100, floor to get whole number)
+$star_rating = floor($raw_count / 100);
 
-    // 3. Set constraints
-    if ($star_rating > 5) { 
-        $star_rating = 5; // Max 5 stars
-    } 
-    if ($star_rating < 1 && $raw_count > 0) { 
-        $star_rating = 1; // If they have 1-99 reviews, show at least 1 star
-    }
-    if ($raw_count <= 0) {
-        $star_rating = 0; // Truly 0 reviews = 0 stars
-    }
+// 3. Set constraints
+if ($star_rating > 5) { 
+    $star_rating = 5; // Max 5 stars
+} 
+if ($star_rating < 1 && $raw_count > 0) { 
+    $star_rating = 1; // If they have 1-99 reviews, show at least 1 star
+}
+if ($raw_count <= 0) {
+    $star_rating = 0; // Truly 0 reviews = 0 stars
+}
 
 ?>
 
@@ -51,7 +51,7 @@ if (!$car) {
                 <h2><?= htmlspecialchars($car['name']) ?> met het beste design</h2>
                 <p>Comfort en prestaties in één voertuig.</p>
 
-                <img src="/assets/images/car-rent-header-image-1.png" alt="">
+                <img src="/assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
             </div>
         </div>
 
@@ -59,11 +59,10 @@ if (!$car) {
 
             <h2><?= htmlspecialchars($car['name']) ?></h2>
 
-        <div class="rating">
-            <span class="stars stars-<?= (int)$star_rating ?>"></span>
-    
-            <span><?= number_format((float)$raw_count) ?>+ reviewers</span>
-        </div>
+            <div class="rating">
+                <span class="stars stars-<?= (int)$star_rating ?>"></span>
+                <span><?= number_format((float)$raw_count) ?>+ reviewers</span>
+            </div>
 
             <p>
                 <?= htmlspecialchars($car['name']) ?> is een krachtige 

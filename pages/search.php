@@ -8,6 +8,7 @@ $stmt = $conn->prepare("
     SELECT * FROM cars 
     WHERE name LIKE :q 
        OR type LIKE :q
+       
 ");
 $stmt->execute([
     ':q' => "%$q%"
@@ -27,7 +28,7 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Left search icon -->
     <button type="submit" class="search-icon">
-      <img src="/assets/images/icons/search-normal.svg" alt="Search">
+      <img src="assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
     </button>
 
     <!-- Input -->
@@ -35,7 +36,7 @@ $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- Right filter icon as a BUTTON (important!) -->
     <button type="button" class="filter-icon" id="filterToggle">
-      <img src="/assets/images/icons/filter.svg" alt="Filter">
+      <img src="assets/images/products/car (<?= (int)$car['car_id'] ?>).svg" alt="<?= htmlspecialchars($car['name']) ?>">
     </button>
 
     <!-- Filter popup -->
