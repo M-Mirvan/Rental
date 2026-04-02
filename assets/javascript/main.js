@@ -72,7 +72,15 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // De modal zelf
+    const modal = document.getElementById('filterModal'); 
+    // De knop die de modal OPENT (bij de zoekbalk)
+    const openBtn = document.getElementById('filterToggle');
+    // De knop die de modal SLUIT (het kruisje)
+    const closeBtn = document.getElementById('filterClose');
 
+z
 document.addEventListener("DOMContentLoaded", function () {
     const loginModal = document.getElementById("loginModal");
     const loginClose = document.getElementById("loginClose");
@@ -81,5 +89,26 @@ document.addEventListener("DOMContentLoaded", function () {
         loginClose.addEventListener("click", function () {
             loginModal.classList.add("hidden");
         });
+
+// 1. Open de modal
+    if (openBtn && modal) {
+        openBtn.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        }
+    }
+
+    // 2. Sluit de modal via de X
+    if (closeBtn && modal) {
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // 3. Sluit de modal als je buiten de witte box klikt
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 });
