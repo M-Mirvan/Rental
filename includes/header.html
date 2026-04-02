@@ -89,4 +89,34 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 <div class="content">
     </div>
 
-</body> </html>
+</body> 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('filterModal'); 
+    const openBtn = document.getElementById('filterToggle');
+    const closeBtn = document.getElementById('filterClose');
+
+    // 1. Open de modal door de class 'show' toe te voegen
+    if (openBtn && modal) {
+        openBtn.onclick = function(e) {
+            e.preventDefault();
+            modal.classList.add('show');
+        }
+    }
+
+    // 2. Sluit de modal door de class 'show' te verwijderen
+    if (closeBtn && modal) {
+        closeBtn.onclick = function() {
+            modal.classList.remove('show');
+        }
+    }
+
+    // 3. Sluit de modal als je buiten de witte box klikt
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.classList.remove('show');
+        }
+    }
+});
+</script>
+</html>
