@@ -1,25 +1,26 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/includes/header.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Use require_once to make sure it loads
+
+// Go up one level from 'pages', then into 'database', then load 'connection.php'//
+require_once __DIR__ . "/../database/connection.php"; 
+
+require_once __DIR__ . "/../includes/header.php";
 
 function getCars($conn, $limit = 4)
 {
-    $stmt = $conn->prepare("
-        SELECT * FROM cars 
-        WHERE available > 0 
-        ORDER BY car_id DESC 
-        LIMIT :limit
-    ");
+    if (!$conn) {
+        return []; //  empty array if no connection
+    }
+
+    $stmt = $conn->prepare("SELECT * FROM cars WHERE available > 0 ORDER BY car_id DESC LIMIT :limit");
     $stmt->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// Now call it
 $popularCars = getCars($conn, 4);
 $recommendedCars = getCars($conn, 8);
-
 ?>
 
 <header>

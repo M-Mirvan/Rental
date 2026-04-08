@@ -1,26 +1,19 @@
-
-<?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// This part looks for 'Environment Variables' on a real server.
-// If it doesn't find them (like on your laptop), it uses the "?? 'fallback'" values.
-$host     = getenv('DB_HOST')     ?? 'localhost';
-$dbname   = getenv('DB_NAME')     ?? 'rental';
-$username = getenv('DB_USER')     ?? 'root';
-$password = getenv('DB_PASS')     ?? ''; // Keep empty for XAMPP
+<?php
+$host = 'localhost';
+$db   = 'rental'; // <--- MAKE SURE THIS IS YOUR ACTUAL DATABASE NAME
+$user = 'root';
+$pass = ''; 
+$charset = 'utf8mb4';
 
 try {
-    $conn = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
-        $username,
-        $password
-    );
+    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+    $conn = new PDO($dsn, $user, $pass);
     
+    // Set error mode so you can see what goes wrong
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Connected successfully!"; // Uncomment to test
     
-} catch(PDOException $e) {
+} catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
+    exit;
 }
 ?>
