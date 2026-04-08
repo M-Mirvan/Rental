@@ -2,24 +2,30 @@
 session_start();
 require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php"; 
 ?>
+
 <!doctype html>
 <html lang="nl">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rydr</title>
+
     <link rel="stylesheet" href="/assets/css/main.css">
+
     <link rel="stylesheet" href="/assets/css/search.css">
     <link rel="icon" type="image/png" href="/assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-    <script src="/assets/javascript/main.js"></script>
+    <script src="/assets/javascipt.main.js" defer></script>
 </head>
 
 <body>
 
 <div class="topbar">
+
+
     <div class="logo">
         <a href="/">Rydr.</a>
     </div>
@@ -39,21 +45,24 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
     <nav class="nav">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/pages/cars.php?q=">Ons aanbod</a></li>
-            <li><a href="#">Hulp nodig?</a></li>
         </ul>
     </nav>
 
+
     <div class="menu">
+
         <?php if (isset($_SESSION['id'])): ?>
+
             <div class="account">
                 <img src="/assets/images/profil.png" alt="profile">
+
                 <div class="account-dropdown">
                     <ul>
                         <li>
                             <img src="/assets/images/icons/setting.svg" alt="">
                             <a href="#">Account</a>
                         </li>
+
                         <li>
                             <img src="/assets/images/icons/logout.svg" alt="">
                             <a href="/logout">Uitloggen</a>
@@ -61,9 +70,13 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
                     </ul>
                 </div>
             </div>
+
         <?php else: ?>
             <a href="/login.php" class="button-primary">Start met huren</a>
+
+
         <?php endif; ?>
+
     </div>
 </div>
 
@@ -86,37 +99,8 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
   </div>
 </div>
 
+
 <div class="content">
     </div>
 
-</body> 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('filterModal'); 
-    const openBtn = document.getElementById('filterToggle');
-    const closeBtn = document.getElementById('filterClose');
-
-    // 1. Open de modal door de class 'show' toe te voegen
-    if (openBtn && modal) {
-        openBtn.onclick = function(e) {
-            e.preventDefault();
-            modal.classList.add('show');
-        }
-    }
-
-    // 2. Sluit de modal door de class 'show' te verwijderen
-    if (closeBtn && modal) {
-        closeBtn.onclick = function() {
-            modal.classList.remove('show');
-        }
-    }
-
-    // 3. Sluit de modal als je buiten de witte box klikt
-    window.onclick = function(event) {
-        if (event.target === modal) {
-            modal.classList.remove('show');
-        }
-    }
-});
-</script>
-</html>
+</body> </html>
