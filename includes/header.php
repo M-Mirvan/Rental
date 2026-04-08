@@ -1,18 +1,16 @@
 <?php
-session_start();
-require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php"; 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+require_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php"; 
 ?>
-
 <!doctype html>
 <html lang="nl">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rydr</title>
-
     <link rel="stylesheet" href="/assets/css/main.css">
-
     <link rel="stylesheet" href="/assets/css/search.css">
     <link rel="icon" type="image/png" href="/assets/images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,8 +22,6 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 <body>
 
 <div class="topbar">
-
-
     <div class="logo">
         <a href="/">Rydr.</a>
     </div>
@@ -45,24 +41,21 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
     <nav class="nav">
         <ul>
             <li><a href="/">Home</a></li>
+            <li><a href="/pages/cars.php?q=">Ons aanbod</a></li>
+            <li><a href="#">Hulp nodig?</a></li>
         </ul>
     </nav>
 
-
     <div class="menu">
-
         <?php if (isset($_SESSION['id'])): ?>
-
             <div class="account">
                 <img src="/assets/images/profil.png" alt="profile">
-
                 <div class="account-dropdown">
                     <ul>
                         <li>
                             <img src="/assets/images/icons/setting.svg" alt="">
                             <a href="#">Account</a>
                         </li>
-
                         <li>
                             <img src="/assets/images/icons/logout.svg" alt="">
                             <a href="/logout">Uitloggen</a>
@@ -70,13 +63,9 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
                     </ul>
                 </div>
             </div>
-
         <?php else: ?>
             <a href="/login.php" class="button-primary">Start met huren</a>
-
-
         <?php endif; ?>
-
     </div>
 </div>
 
@@ -99,8 +88,9 @@ require $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
   </div>
 </div>
 
-
 <div class="content">
     </div>
 
-</body> </html>
+</body> 
+
+</html>
