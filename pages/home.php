@@ -1,9 +1,4 @@
 <?php
-// Use require_once to make sure it loads
-
-// Go up one level from 'pages', then into 'database', then load 'connection.php'//
-require_once __DIR__ . "/../database/connection.php"; 
-
 require_once __DIR__ . "/../includes/header.php";
 
 function getCars($conn, $limit = 4)
