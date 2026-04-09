@@ -6,6 +6,8 @@
 body {
   background-color: #F6F7F9;
   margin: 0;
+  /* Kleur aangepast voor hoog contrast */
+  color: #1a1a1a; 
 }
 
 .grid {
@@ -35,11 +37,13 @@ main {
 }
 
 .accent-color {
-  color: #90A3BF;
+  /* Was #90A3BF (te licht), nu donkerder voor AA contrast */
+  color: #597193; 
 }
 
 .button-primary {
-  background-color: #3563e9 !important;
+  /* Was #3563e9, nu donkerder blauw voor beter contrast met witte tekst */
+  background-color: #274bc2 !important; 
   color: white !important;
   border-radius: 4px;
   padding: 10px 20px;
@@ -49,6 +53,7 @@ main {
 
 .succes-message {
   background-color: #cdffcd;
+  color: #005a00; /* Zorgt voor contrast op de lichtgroene achtergrond */
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 10px;
@@ -56,6 +61,7 @@ main {
 
 .message {
   background-color: #f2a237;
+  color: #000000; /* Zwart op oranje is het best leesbaar */
   padding: 1em;
   margin-bottom: 1em;
   border-radius: 10px;
@@ -109,7 +115,7 @@ main {
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
   text-decoration: none;
-  color: #333;
+  color: #333; /* Goed contrast met lichte grijze achtergrond */
   font-weight: 600;
   transition: background-color 0.2s;
   cursor: pointer;
@@ -127,6 +133,7 @@ main {
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #1a1a1a;
 }
 
 .rating {
@@ -145,29 +152,30 @@ main {
   content: "★★★★★";
 }
 
+/* Goud in plaats van felgeel voor zichtbaarheid op wit */
 .stars.stars-1::before {
   content: "★☆☆☆☆";
-  color: #facc15;
+  color: #C28E00; 
 }
 
 .stars.stars-2::before {
   content: "★★☆☆☆";
-  color: #facc15;
+  color: #C28E00;
 }
 
 .stars.stars-3::before {
   content: "★★★☆☆";
-  color: #facc15;
+  color: #C28E00;
 }
 
 .stars.stars-4::before {
   content: "★★★★☆";
-  color: #facc15;
+  color: #C28E00;
 }
 
 .stars.stars-5::before {
   content: "★★★★★";
-  color: #facc15;
+  color: #C28E00;
 }
 
 .advertorials {
@@ -180,24 +188,23 @@ main {
 
 .advertorial {
   flex: 1;
-  background-color: #54A6FF;
+  /* Donkerder blauw voor voldoende contrast met witte tekst */
+  background-color: #006de2; 
   display: flex;
   padding: 24px;
   flex-direction: column;
   border-radius: 10px;
 }
 .advertorial h2 {
-  color: white;
   max-width: 50%;
-  /* The Best Platform for Car Rental */
   font-weight: 400;
-  line-height: 150%; /* or 48px */
-  letter-spacing: -0.03em; /* Primary/0 */
-  color: #FFFFFF; /* Inside auto layout */
+  line-height: 150%; 
+  letter-spacing: -0.03em;
+  color: #FFFFFF; 
   margin: 0;
 }
 .advertorial p {
-  color: white;
+  color: #FFFFFF;
   max-width: 50%;
 }
 .advertorial img {
@@ -239,7 +246,8 @@ footer .footer-links .links ul {
 }
 footer .footer-links .links ul a {
   text-decoration: none;
-  color: #90A3BF;
+  /* Was #90A3BF, donkerder gemaakt */
+  color: #597193; 
 }
 
 .legal-footer {
@@ -257,7 +265,7 @@ footer .footer-links .links ul a {
 }
 .legal-footer .legal-links ul a {
   text-decoration: none;
-  color: black;
+  color: #1a1a1a;
 }
 
 .topbar {
@@ -280,14 +288,14 @@ footer .footer-links .links ul a {
 }
 .topbar .logo a {
   display: inline-block;
-  color: #3563e9;
+  /* Aangepast primaire kleur */
+  color: #274bc2; 
   font-size: 2em;
   text-decoration: none;
-  /* Logo */
   font-family: "Plus Jakarta Sans";
   font-style: normal;
   font-weight: 700;
-  line-height: 150%; /* or 48px */
+  line-height: 150%;
   align-items: center;
   letter-spacing: -0.03em;
 }
@@ -301,9 +309,10 @@ footer .footer-links .links ul a {
   min-width: auto;
 }
 .topbar form input[type=search] {
-  padding: 10px 40px 10px 40px; /* ruimte voor icoon links */
+  padding: 10px 40px 10px 40px;
   width: 80%;
-  border: 1px solid #C3D4E9;
+  /* Donkerder grijs voor UI contrast (3:1) */
+  border: 1px solid #7D92AB; 
   border-radius: 70px;
   font-size: 14px;
   min-width: 200px;
@@ -311,8 +320,8 @@ footer .footer-links .links ul a {
 }
 .topbar form input[type=search]:focus {
   outline: none;
-  border-color: #3563e9;
-  box-shadow: 0 0 0 2px rgba(53, 99, 233, 0.2);
+  border-color: #274bc2;
+  box-shadow: 0 0 0 2px rgba(39, 75, 194, 0.2);
 }
 .topbar form img {
   position: absolute;
@@ -331,7 +340,8 @@ footer .footer-links .links ul a {
 }
 .topbar nav ul a {
   text-decoration: none;
-  color: #7ca6#2D2D2Dc3;
+  /* Fout in originele code (#7ca6#2D2D2Dc3) gefixt */
+  color: #2D2D2D; 
 }
 .topbar .menu {
   flex: 1;
@@ -413,7 +423,8 @@ footer .footer-links .links ul a {
 
 .section-title {
   font-size: 1em;
-  color: #90A3BF;
+  /* Was #90A3BF */
+  color: #597193; 
 }
 
 .cars {
@@ -432,7 +443,7 @@ footer .footer-links .links ul a {
   margin: 0;
 }
 .cars .car-details .car-type {
-  color: #90A3BF;
+  color: #303030;
 }
 .cars img {
   max-height: 87px;
@@ -445,7 +456,8 @@ footer .footer-links .links ul a {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #90A3BF;
+  /* Was #90A3BF */
+  color: #597193; 
 }
 .cars .rent-details {
   display: flex;
@@ -470,210 +482,205 @@ footer .footer-links .links ul a {
 }
 .account-form input {
   background-color: #F6F7F9;
-  border: none;
+  /* Donkerdere border voor UI contrast */
+  border: 1px solid #7D92AB; 
   margin-bottom: 24px;
   padding: 1em 2em;
   border-radius: 10px;
 }
 .account-form label {
   margin-bottom: 1em;
+  font-weight: 600;
 }
 
 .hidden {
-    display: none;
-}
-
-/*# sourceMappingURL=main.css.map */
-
-/* RESET */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    background: #f8f9fb;
-    color: #1a1a1a;
+  display: none;
 }
 
 /* SECTIONS */
 section {
-    padding: 80px 40px;
+  padding: 80px 40px;
 }
 
 /* HERO */
 .hero {
-    position: relative;
-    height: 500px;
+  position: relative;
+  height: 500px;
 }
 
 .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* DARK OVERLAY */
 .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* Iets donkerder voor beter contrast */
 }
 
 .hero-text {
-    position: absolute;
-    bottom: 60px;
-    left: 60px;
-    color: white;
-    z-index: 2;
+  position: absolute;
+  bottom: 60px;
+  left: 60px;
+  /* Zwarte tekst op zwarte overlay is onleesbaar. Wit gemaakt. */
+  color: #FFFFFF; 
+  z-index: 2;
 }
 
 .hero-text h1 {
-    font-size: 52px;
-    margin: 0;
+  font-size: 52px;
+  margin: 0;
 }
 
 .hero-text p {
-    font-size: 18px;
-    margin-top: 10px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
 /* ABOUT */
 .about {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
 .grid img {
-    width: 100%;
-    border-radius: 12px;
+  width: 100%;
+  border-radius: 12px;
 }
 
 .about h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 .about p {
-    line-height: 1.7;
-    color: #555;
+  line-height: 1.7;
+  color: #444; /* #555 was goed, #444 is nóg beter leesbaar */
 }
 
 /* TEAM */
 .team {
-    text-align: center;
+  text-align: center;
 }
 
 .team h2 {
-    font-size: 32px;
-    margin-bottom: 50px;
+  font-size: 32px;
+  margin-bottom: 50px;
 }
 
 .team-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
 .team-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: 0.3s;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s;
 }
 
 .team-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .team-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .team-card h3 {
-    margin: 10px 0 5px;
+  margin: 10px 0 5px;
 }
 
 .team-card p {
-    color: #777;
+  /* Was #777 (slechte leesbaarheid op wit). Aangepast naar #555. */
+  color: #555; 
 }
 
 /* VALUES */
 .values {
-    background: white;
+  background: white;
 }
 
 .values h2 {
-    text-align: center;
-    margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .values-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
 }
 
 .values-grid h3 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .values-grid p {
-    color: #666;
+  /* Was #666. Aangepast naar #444. */
+  color: #444; 
 }
 
 /* CTA */
 .cta {
-    text-align: center;
-    background: linear-gradient(135deg, #2d5bff, #4f7cff);
-    color: white;
-    border-radius: 20px;
-    max-width: 900px;
-    margin: 80px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #274bc2, #4670e8); /* Contrast aangepast */
+  color: white;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 80px auto;
 }
 
 .cta h2 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .cta a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 28px;
-    background: white;
-    color: #2d5bff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: white;
+  color: #274bc2;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .grid,
-    .team-grid,
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
+  .grid,
+  .team-grid,
+  .values-grid {
+      grid-template-columns: 1fr;
+  }
 
-    .hero-text {
-        left: 20px;
-        bottom: 20px;
-    }
+  .hero-text {
+      left: 20px;
+      bottom: 20px;
+  }
 
-    .hero-text h1 {
-        font-size: 32px;
-    }
+  .hero-text h1 {
+      font-size: 32px;
+  }
 }
