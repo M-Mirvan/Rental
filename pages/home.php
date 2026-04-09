@@ -32,7 +32,7 @@ $recommendedCars = getCars($conn, 8);
             <h2>Wij verhuren ook bedrijfswagens</h2>
             <p>Voor een vaste lage prijs met prettige voordelen.</p>
             <a href="#" class="button-primary">Huur een bedrijfswagen</a>
-            <img src="assets/images/car-rent-header-image-2.png" alt="">
+            <img src="assets/images/car-rent-header-image-2.png" alt="img2">
         </div>
     </div>
 </header>
@@ -41,7 +41,7 @@ $recommendedCars = getCars($conn, 8);
 
 <h2 class="section-title">Populaire auto's</h2>
 <div class="cars">
-
+<meta name="description" content="Huur eenvoudig de beste auto's bij Rydr. Van SUV's tot sportwagens, vind de perfecte rit voor de scherpste prijs. Start vandaag nog met huren!">
 <?php foreach ($popularCars as $car): ?>
     <div class="car-details">
         
@@ -56,17 +56,17 @@ $recommendedCars = getCars($conn, 8);
 
         <div class="car-specification">
             <span>
-                <img src="assets/images/icons/gas-station.svg">
+                <img src="assets/images/icons/gas-station.svg" alt="gas1">
                 <?= (int)$car['fuel_capacity'] ?>L
             </span>
 
             <span>
-                <img src="assets/images/icons/car.svg">
+                <img src="assets/images/icons/car.svg" alt="car">
                 <?= htmlspecialchars($car['steering']) ?>
             </span>
 
             <span>
-                <img src="assets/images/icons/profile-2user.svg">
+                <img src="assets/images/icons/profile-2user.svg" alt="profile">
                 <?= (int)$car['capacity'] ?> personen
             </span>
         </div>
@@ -106,17 +106,17 @@ $recommendedCars = getCars($conn, 8);
 
         <div class="car-specification">
             <span>
-                <img src="assets/images/icons/gas-station.svg">
+                <img src="assets/images/icons/gas-station.svg" alt="gas">
                 <?= (int)$car['fuel_capacity'] ?>L
             </span>
 
             <span>
-                <img src="assets/images/icons/car.svg">
+                <img src="assets/images/icons/car.svg" alt="caricon">
                 <?= htmlspecialchars($car['steering']) ?>
             </span>
 
             <span>
-                <img src="assets/images/icons/profile-2user.svg">
+                <img src="assets/images/icons/profile-2user.svg" alt="profile">
                 <?= (int)$car['capacity'] ?> personen
             </span>
         </div>

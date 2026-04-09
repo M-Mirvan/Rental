@@ -9,6 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Huur de beste auto's bij Rydr. Ontdek ons ruime aanbod aan SUV's, sportwagens en sedans voor de scherpste prijzen. Makkelijk en snel online boeken.">
     <title>Rydr</title>
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/search.css">
@@ -53,11 +54,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
                 <div class="account-dropdown">
                     <ul>
                         <li>
-                            <img src="/assets/images/icons/setting.svg" alt="">
+                            <img src="/assets/images/icons/setting.svg" alt="sett">
                             <a href="#">Account</a>
                         </li>
                         <li>
-                            <img src="/assets/images/icons/logout.svg" alt="">
+                            <img src="/assets/images/icons/logout.svg" alt="logout">
                             <a href="/logout">Uitloggen</a>
                         </li>
                     </ul>
