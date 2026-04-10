@@ -17,7 +17,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/database/connection.php";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
-    <script src="/assets/javascipt.main.js" defer></script>
+    <script src="assets/javascript/main.js" defer></script>
 </head>
 
 <body>
