@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (startButton && loginModal) {
         startButton.addEventListener('click', function (e) {
-            // Only prevent default if it's an anchor tag used as a button
             if (this.tagName === 'A') e.preventDefault();
             loginModal.classList.remove('hidden');
         });
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (randomCarBtn) {
         const ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         const randomId = ids[Math.floor(Math.random() * ids.length)];
-        // Note: Check if the path needs to be "/pages/..." depending on where this JS runs
         randomCarBtn.href = "pages/car-detail.php?id=" + randomId;
     }
 
@@ -65,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (filterToggle && filterModal) {
         filterToggle.addEventListener('click', function (e) {
             e.preventDefault();
-            // Use 'show' class or inline style depending on your CSS
             filterModal.classList.add('show'); 
             filterModal.style.display = "block"; 
         });

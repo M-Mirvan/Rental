@@ -288,7 +288,6 @@ footer .footer-links .links ul a {
 }
 .topbar .logo a {
   display: inline-block;
-  /* Aangepast primaire kleur */
   color: #274bc2; 
   font-size: 2em;
   text-decoration: none;
@@ -340,7 +339,6 @@ footer .footer-links .links ul a {
 }
 .topbar nav ul a {
   text-decoration: none;
-  /* Fout in originele code (#7ca6#2D2D2Dc3) gefixt */
   color: #2D2D2D; 
 }
 .topbar .menu {
